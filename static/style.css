@@ -1,0 +1,199 @@
+/*font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));*/
+
+body {
+	background-color: var(--main-bg-color);
+	padding: 0 4vw 2.5vh 4vw;
+	margin-bottom: 89px; /* plyr: 52px + information: 27px + border: 10px*/
+	min-height: 50vh;
+	font-weight: 400;
+	font-family: TheSansPlain;
+}
+
+.cardContainer {
+	max-width: 80vw;
+	margin: 0 auto;
+	display: grid;
+	grid-gap: 2vw;
+	grid-template-columns: repeat(1, minmax(0, 1fr)); /*das minmax(0, 1fr) ist da damit, sie wirklich immer gleich breit sind. wtf */
+	grid-auto-rows: 1fr; /* damit alle gleich hoch sind */
+}
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100vw;
+	text-align: center;
+	height: 80px;
+	visibility: hidden;
+	background-color: white;
+}
+
+.footerInformation {
+	height: 27px;
+	position: relative;
+	margin-left: 17px; /*to be aligned left with the first button of plyr */
+	margin-right: 17px; /*to be aligned right with the last button of plyr */
+}
+
+.footerInformationBlock {
+	position: absolute;
+	left: 0px;
+	bottom: 0px; /* to be as far down as possible to still be visible*/
+	width: 100%;
+
+	text-align: left;
+	line-height: 1;
+	color: var(--footer-text-color);
+
+	/* so the text looks just like plyrs text */
+	font-weight: 500;
+	font-size: 14px;
+}
+.footerInformationName {
+	display: inline;
+}
+
+.footerInformationTime {
+	display: inline;
+	float: right;
+	text-align: right;
+}
+
+.plyr {
+	font-family: TheSansPlain !important;
+	font-weight: 500 !important;
+	font-size: 8px !important;
+	color: var(--footer-text-color) !important;
+}
+
+.footerPlayer {
+	height: 52px;
+}
+
+.alert {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	padding: 2vh;
+	background-color: var(--card-bg-color-2); /* Red */
+	color: var(--main-text-color);
+	margin-bottom: 2vh;
+	visibility: hidden;
+}
+
+.alertLeft {
+	float: left;
+	width: 70%;
+	margin: 0 5% 0 0;
+}
+
+.alertRight {
+	float: right;
+	width: 20%;
+	margin-right: 5% !important;
+	margin-left: 0 !important;
+}
+
+.headLeft {
+	width: 100%;
+	margin-top: 3vh;
+}
+
+.headRight {
+	position: absolute;
+	top: 2vh;
+	right: 2vh;
+}
+
+.headRight a.button {
+	font-size: 8px;
+	font-size: clamp(8px, 2vw, 16px);
+}
+
+
+.heading {
+	color: white;
+	text-align: center;
+	font-size: 22px;
+	font-size: clamp(22px, 6vw, 72px);
+	font-weight: 700;
+}
+
+a.button{
+	display: inline-block; /*so both buttons are always inline*/
+	min-width: min(10vw, 100px);
+	width: 45%; /*so both buttons are always same width*/
+	padding:0.46em 0; /*only padding to top and bottom*/
+	border:0.1em solid var(--button-text-color);
+	margin:1%;
+	box-sizing: border-box;
+	text-decoration:none;
+	color:var(--button-text-color);
+	text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+	background-color:var(--main-object-color);
+	text-align: center;
+	transition: all 0.15s;
+	font-size: 12px;
+	font-size: clamp(12px, 2vw, 20px);
+}
+
+a.button:hover{
+	text-shadow: 0 0 2em rgba(255,255,255,1);
+	color:var(--buton-text-hover-color);
+	border-color:var(--buton-text-hover-color);
+}
+
+.pageVersion {
+	font-size: 8px;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	color: var(--card-hover-bg-color-dark);
+}
+
+.debugField {
+	overflow: auto;
+	width: 90%;
+	max-height: 25vh;
+	font-size: 12px;
+	font-size: clamp(12px, 2vw, 16px);
+	display: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@media (min-width: 700px) {
+	.cardContainer {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.cardContainer {
+		max-width: 90vw;
+	}
+}
+
+@media (min-width: 1200px) {
+	.cardContainer {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}

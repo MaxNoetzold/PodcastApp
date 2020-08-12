@@ -1,0 +1,8 @@
+/*
+THE SANS B5 PLAIN FONT
+*/
+
+@font-face {
+  font-family: TheSansPlain;
+  src: url(font/TheSans_Plain/TheSans-B5Plain.otf);
+}

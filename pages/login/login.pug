@@ -1,0 +1,18 @@
+extends ../../views/layout
+
+block styles
+	link(rel="stylesheet" href="/login.css")
+block scripts
+	script(src='/login_client.js')
+
+block layout-content
+	.login-page
+		.form
+			p.errorDisplay#ErrorDisplay .
+			form.login-form
+				input#username(type='text' placeholder='Your username')
+				input#password(type='password' placeholder='Your password')
+				a#loginButton.button(style='color: var(--player-object-color); border-color: var(--player-object-color);') Log In
+				p.message
+					| Not registered?
+					a(href='/register') Create an account

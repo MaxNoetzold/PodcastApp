@@ -1,0 +1,28 @@
+doctype html
+html(lang='de')
+	head
+		meta(charset="utf-8")
+		link(rel="shortcut icon", href="/favicon.ico")
+		link(rel='apple-touch-icon' href='images/touch/homescreen192.png')
+		meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+		meta(name="theme-color", content="#000000")
+		meta(name="Description" content="The admin page.")
+		title Admin Page | Max redet über sein Leben
+		link(rel="stylesheet" href="/fonts.css" defer='')
+		link(rel="stylesheet" href="/properties.css" defer='')
+		link(rel="stylesheet" href="/admin/admin.css" defer='')
+		link(rel='stylesheet' href='/popupmodal.css' defer='')
+		script(type='text/javascript' src='/admin/vanilla-router.min.js' defer='')
+		script(type='text/javascript' src='/admin/users.js' defer='')
+		script(type='text/javascript' src='/admin/notifications.js' defer='')
+		script(type='text/javascript' src='/admin/podcasts.js' defer='')
+		script(type='text/javascript' src='/admin/filterbubbles.js' defer='')
+		script(type='text/javascript' src='/admin/admin_client.js')
+	body
+		div#main
+			.topnav#topnav
+				a.active(href='/admin' onclick="routePage(event)") Podcasts
+				a(href='/admin/notification' onclick="routePage(event)") Send Notification
+				a(href='/admin/users' onclick="routePage(event)") Users
+				a(href='/admin/filterbubbles' onclick="routePage(event)") Filter Bubbles
+			.div#adminContainer

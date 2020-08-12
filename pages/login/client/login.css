@@ -1,0 +1,57 @@
+.login-page {
+	width: 90%;
+	max-width: 600px;
+	padding: 10% 5% 5% 5%;
+	margin: auto;
+}
+.form {
+	position: relative;
+	z-index: 1;
+	background: var(--card-bg-color-dark);
+	max-width: 100%;
+	padding: 8%;
+	text-align: center;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+	outline: 0;
+	background: var(--main-object-color);
+	width: 100%;
+	border: 0;
+	margin: 0 0 2vh;
+	padding: 2vh;
+	box-sizing: border-box;
+	font-size: 2vh;
+}
+.form .message {
+	margin: 3% 0 0 0;
+	color: var(--buton-text-hover-color);
+	font-size: 1.5vh;
+}
+.form .message a {
+	color: var(--player-object-color);
+	text-decoration: none;
+}
+.form .errorDisplay {
+	margin: 0 0 3% 0;
+	color: var(--card-bg-color-dark);
+	font-size: 2vh;
+}
+.form .register-form {
+	display: none;
+}
+
+@media (max-width: 54.5vh) {	
+	.form input{
+		font-size: 3.5vw;
+		padding: 3.5vw;
+	}
+	
+	.form .errorDisplay {
+		font-size: 3.5vw;
+	}
+	
+	.form .message {
+		font-size: 3vw;
+	}
+}

@@ -1,0 +1,38 @@
+{
+  "name": "PodcastApp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./index.js",
+    "ui": "browser-sync start --proxy=localhost:8000 --files='**/*.css, **/*.pug, **/*.js' --ignore=node_modules --reload-delay 10 --no-ui --no-notify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "@simonwep/pickr": "^1.7.1",
+    "bcrypt": "^4.0.1",
+    "connect-mongodb-session": "^2.3.3",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "font-awesome": "^4.7.0",
+    "localforage": "^1.9.0",
+    "mux.js": "^5.6.4",
+    "node-sass": "^4.14.1",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "passport.socketio": "^3.7.0",
+    "plyr": "^3.6.2",
+    "pug": "^2.0.4",
+    "shaka-player": "^3.0.2",
+    "socket.io": "^2.3.0",
+    "vanilla-router": "^1.2.8",
+    "web-push": "^3.4.4"
+  }
+}

@@ -1,0 +1,119 @@
+.settingsTable {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.settingsTable td {
+	vertical-align: top;
+}
+
+.settingsTH {
+	text-align: left;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	font-size: 2.5vw;
+	font-size: clamp(16px, 2.5vw, 22px);
+}
+
+tr.separating_line {
+	border-top: 1px solid white; /* top border only */
+}
+
+td.separating_line {
+	width: 60%;
+	padding-right: 10px;
+}
+
+
+/* On/Off Switch */
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 10vw;
+	height: 5vw;
+	margin-bottom: 1vh;
+}
+
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: var(--buton-text-hover-color);
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 4vw;
+	width: 4vw;
+	left: 0.5vw;
+	bottom: 0.5vw;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+input:checked + .slider {
+	background-color: var(--card-bg-color-1);
+}
+
+input:focus + .slider {
+	box-shadow: 0 0 1px var(--card-bg-color-1);
+}
+
+input:checked + .slider:before {
+	-webkit-transform: translateX(5vw);
+	-ms-transform: translateX(5vw);
+	transform: translateX(5vw);
+}
+
+/* Passwort change */
+
+.form {
+	position: relative;
+	max-width: 100%;
+	text-align: center;
+}
+.form input {
+	font-size: 1.5vw;
+	font-size: clamp(8px, 1.5vw, 12px);
+	outline: 0;
+	background: var(--main-object-color);
+	width: 100%;
+	height: 4em;
+	border: 0;
+	margin: 0 0 2vh;
+	box-sizing: border-box;
+	padding: 0.5em;
+}
+.form .errorDisplay {
+	margin: 0 0 3% 0;
+	color: var(--card-bg-color-dark);
+	font-size: 1.5vw;
+	font-size: clamp(8px, 1.5vw, 12px);
+	display: none;
+}
+
+/* color picker */
+
+.pcr-app {
+    width: 90% !important;
+	margin: 2% 0 !important;
+	padding: 5% !important;
+	visibility: visibile !important;
+}
+
+.pcr-button {
+	width: 100% !important;
+}

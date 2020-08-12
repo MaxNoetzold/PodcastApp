@@ -1,0 +1,19 @@
+block variables
+doctype html
+html(lang='de')
+	head
+		meta(charset="utf-8")
+		link(rel="shortcut icon", href="/favicon.ico")
+		link(rel='apple-touch-icon' href='images/touch/homescreen192.png')
+		meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+		meta(name="theme-color", content="#000000")
+		meta(name="Description" content="The publicly available login and register page.")
+		title #{title} | Max redet über sein Leben
+		link(rel="stylesheet" href="/fonts.css")
+		link(rel="stylesheet" href="/properties.css")
+		link(rel="stylesheet" href="/style.css")
+		block styles
+		block scripts
+	body
+		div#main
+			block layout-content

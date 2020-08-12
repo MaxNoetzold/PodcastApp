@@ -1,0 +1,107 @@
+extends ../../views/authLayout
+
+block scripts
+	script(type='text/javascript' src='/main/secrets.js' defer='')
+	script(src='/mux.js/mux.min.js' defer='')
+	script(type='text/javascript' src='/socket.io-client/socket.io.js' defer='')
+	script(type='text/javascript' src='/plyr/plyr.js' defer='')
+	script(type='text/javascript' src='/shaka-player/shaka-player.compiled.js' defer='')
+	script(type='text/javascript' src='/main/players.js' defer='')
+	script(type='text/javascript' src='/main/download.js' defer='')
+	script(type='text/javascript' src='/localforage/localforage.min.js' defer='')
+	script(type='text/javascript' src='/main/podcastTimers.js' defer='')
+	script(type='text/javascript' src='/main/notifications.js' defer='')
+	script(type='text/javascript' src='/main/settings.js' defer='')
+	script(type='text/javascript' src='/main/comments.js' defer='')
+	script(type='text/javascript' src='/main/guiLoader.js' defer='')
+	script(type='text/javascript' src='/main/guiFunctions.js' defer='')
+	script(type='text/javascript' src='/pickr/pickr.min.js' defer='')
+	script(type='text/javascript' src='/main/main_client.js')
+	script(type='text/javascript' src='/main/serviceWorker.js')
+
+block styles
+	link(rel='stylesheet' href='/main/cardStyle.css')
+	link(rel='stylesheet' href='/main/settings.css' defer='')
+	link(rel='stylesheet' href='/popupmodal.css' defer='')
+	link(rel='stylesheet' href='/plyr/plyr.css' defer='')
+	link(rel='stylesheet' href='/main/comments.css' defer='')
+	link(rel='stylesheet' href='/pickr/themes/classic.min.css' defer='')
+	link(rel='stylesheet' href='/font-awesome/css/font-awesome.min.css' defer='')
+
+block layout-content
+	.pageVersion#PageVersion
+	.debugField#DebugField
+		p#DebugText
+	.headLeft
+		.heading Max redet über sein Leben
+	.headRight
+		a#openSettingsButton.button(onclick="openSettings()" style="width:auto") Settings
+	.div#archiveDiv(style='visibility:visible;')
+		.cardContainer#archiveCardContainer
+	.alert#alertBox
+	.footer#footer
+		.footerInformation
+			.footerInformationBlock
+				.footerInformationName#informationFooter
+				.footerInformationTime#timeFooterDuration
+				.footerInformationTime#timeFooterCurrent
+		.footerPlayer#playerFooter
+			audio#player(onplay='onAudioPlay()')
+				| Your browser does not support the audio element.
+	#settings.modal
+		.modal-content
+			.modal-header
+				span.close#settingsClose &times;
+				h2 Settings
+			.modal-body
+				table.settingsTable
+					tr
+						th(colspan="2").settingsTH Logout
+					tr
+						td.separating_line Ääh. Joah. Das logged dich halt aus... wie die Überschrift und der Button vermuten lassen. :)
+						td
+							a.button(href="/logout" style="width:auto; float: right; margin-right: 0;") Logout
+					tr.separating_line
+						th(colspan="2").settingsTH Passwort ändern
+					tr
+						td.separating_line Hier kannst du dein Passwort ändern, gib dazu einfach dein bisheriges und zwei mal dein neues ein und klick auf [Ändern]!
+						td
+							.form
+								p.errorDisplay#ErrorDisplay .
+								form.login-form
+									input#oldPassword(type='password' placeholder='Dein altes Passwort')
+									input#newPassword(type='password' placeholder='Dein neues Passwort')
+									input#newPasswordRepeat(type='password' placeholder='Wiederholung deines neuen Passworts')
+									a#passwordChangeButton.button(onclick="changePassword()") Ändern
+					tr.separating_line
+						th(colspan="2").settingsTH Farbe ändern
+					tr
+						td.separating_line Hier kannst du die Farbe deines Namens in den Kommentarchats ändern.
+						td
+							.form
+								p.errorDisplay#ErrorDisplayColor .
+								.pickr
+					tr.separating_line
+						th(colspan="2").settingsTH Benachrichtigungen
+					tr
+						td.separating_line#NotificationSettingText Hier kannst du einstellen, ob du Benachrichtigungen erhalten willst.
+						td
+							label.switch(style="float: right;")
+								input#NotificationSettingCheckbox(type='checkbox' onclick="switchNotificationSetting()")
+								span.slider
+					tr.separating_line
+						th(colspan="2").settingsTH Debug Logging on/off
+					tr
+						td.separating_line Diese Funktion gibt dir die Möglichkeit anzugucken, was die Website so für Sachen loggt. Vor allem nützlich, wenn es ein Fehler gab und du mir davon berichten willst. Denn ich sende diese Logs nicht automatisch an mich, stattdessen bleiben sie schön bei dir auf deinem Gerät.
+						td
+							label.switch(style="float: right;")
+								input#DebugLoggingSettingCheckbox(type='checkbox' onclick="switchDebugLoggingSetting()")
+								span.slider
+					tr.separating_line
+						th(colspan="2").settingsTH Early Access on/off
+					tr
+						td.separating_line Das solltest du eigentlich immer ausgeschaltet lassen, außer ich bitte dich darum, es anzuschalten. Damit möchte ich hin und wieder neue Sachen testen, ohne eure Nutzererfahrung (was 1 Wort) zu beeinträchtigen.
+						td
+							label.switch(style="float: right;")
+								input#EarlyAccessSettingSettingCheckbox(type='checkbox' onclick="switchEarlyAccessSettingSetting()")
+								span.slider

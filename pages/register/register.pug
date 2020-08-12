@@ -1,0 +1,19 @@
+extends ../../views/layout
+
+block styles
+	link(rel="stylesheet" href="/register.css")
+block scripts
+	script(src='/register_client.js')
+
+block layout-content
+	.login-page
+		.form
+			p.errorDisplay#ErrorDisplay .
+			form.login-form(action='/login' method='post')
+				input#username(type='text' placeholder='Your username')
+				input#password(type='password' placeholder='Your password')
+				input#passwordRepeat(type='password' placeholder='Repeat your password')
+				a#registerButton.button(style='color: var(--player-object-color); border-color: var(--player-object-color);') Register
+				p.message
+					| Already registered?
+					a(href='/login') LogIn

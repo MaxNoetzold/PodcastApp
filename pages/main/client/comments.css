@@ -1,0 +1,125 @@
+.messageBox	{
+	outline: 0.25vh solid var(--main-text-color);
+	background: inherit;
+	width: 100%;
+	height: 20vh;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.messageBox::-webkit-scrollbar {
+	width: 5px;
+}
+
+.message {
+	margin-top: 0.75vh;
+	font-size: 2vw;
+	font-size: clamp(12px, 2vw, 14px);
+	text-align: left;
+	margin: 0 0.25vw;
+}
+
+.messageHeader	{
+	font-size: inherit;
+	float: left;
+	margin: 0;
+	width: 100%;
+	margin-bottom: 2px;
+}
+
+.messageUsername	{
+	color: rgb(136, 230, 138);
+	margin-right: 1%;
+	font-size: 3vw;
+	font-size: clamp(14px, 3vw, 20px);
+}
+
+.messageTimestamp	{
+	color: var(--dark-text-color);
+	font-weight: 100;
+	margin-left: 1%;
+}
+
+.messageContent	{
+	color: var(--main-text-color);
+	word-wrap: break-word;
+	word-break: break-all;
+}
+
+textarea {
+	resize: none;
+}
+.commentInputBox {
+	width: 100%;
+	display: flex;
+	margin-top: 2vh;
+}
+
+.commentInputField {
+	width: 80%;
+	height: 5vh;
+	border: 0;
+	outline: 0;
+	font-size: 2.5vw;
+	font-size: clamp(13px, 2.5vw, 16px);
+	color: var(--main-text-color);
+	background: rgba(0,0,0,0.2);
+	word-wrap: break-word;
+
+	border-bottom: 0.25vh solid var(--main-text-color);
+}
+
+.commentInputField:focus {
+	font-weight: 400;
+}
+
+.commentInputField:focus.inputFieldLine1 {
+	border-image: linear-gradient(to right, var(--main-text-color), #45b6fe);
+	border-image-slice: 1;
+}
+.commentInputField:focus.inputFieldLine2:focus {
+	border-image: linear-gradient(to right, var(--main-text-color), red);
+	border-image-slice: 1;
+}
+.commentInputField:focus.inputFieldLine3:focus {
+	border-image: linear-gradient(to right, var(--main-text-color), yellow);
+	border-image-slice: 1;
+}
+.commentInputField:focus.inputFieldLine4:focus {
+	border-image: linear-gradient(to right, var(--main-text-color), green);
+	border-image-slice: 1;
+}
+
+.commentInputButton {
+	background-color: rgba(0,0,0,0.2);
+	border: none;
+	color: white;
+	font-size: 16px;
+	cursor: pointer;
+	margin-left: 2%;
+	width: 18%;
+}
+
+.commentInputButton:hover {
+	background-color: rgba(0,0,0,0.5);
+}
+
+textarea::-webkit-input-placeholder {
+	color: var(--main-text-color);
+}
+
+textarea:-moz-placeholder { /* Firefox 18- */
+	color: var(--main-text-color);
+}
+
+textarea::-moz-placeholder {	/* Firefox 19+ */
+	color: var(--main-text-color);
+}
+
+textarea:-ms-input-placeholder {
+	color: var(--main-text-color);
+}
+
+textarea::placeholder {
+	color: var(--main-text-color);
+}

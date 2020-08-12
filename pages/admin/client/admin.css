@@ -1,0 +1,130 @@
+body {
+	background: var(--main-bg-color);
+	color: var(--main-text-color);
+	font-family: Helvetica, arial, sans-serif; /* TODO: Ersetzen mit AS Font */
+	max-width: 80vw;
+	margin: 0 auto;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.modal-content {
+	height: auto !important;
+}
+
+.form {
+	margin-top: 3%;
+	position: relative;
+	max-width: 100%;
+	text-align: center;
+}
+
+.form input {
+	font-size: 1.5vw;
+	font-size: clamp(10px, 1.5vw, 16px);
+	outline: 0;
+	background: var(--main-object-color);
+	width: 100%;
+	height: 4em;
+	border: 0;
+	margin: 0 0 2%;
+	box-sizing: border-box;
+	padding: 0.5em;
+}
+
+input.checkbox {
+	float: left;
+	width: auto;
+	height: auto;
+}
+
+textArea {
+	font-size: 1.5vw;
+	font-size: clamp(10px, 1.5vw, 16px);
+	outline: 0;
+	background: var(--main-object-color);
+	width: 100%;
+	height: 10em;
+	padding: 0.5em;
+	border: 0;
+	box-sizing: border-box;
+	margin: 0 0 2%;
+}
+
+.errorDisplay {
+	margin-bottom: 3%;
+	padding: 1%;
+	display: none;
+	width: 98%;
+	background-color: var(--card-bg-color-2);
+	color: white;
+}
+
+a.button{
+	display: inline-block; /*so both buttons are always inline*/
+	min-width: min(10vw, 100px);
+	width: 30%; /*so both buttons are always same width*/
+	padding:0.46em 0; /*only padding to top and bottom*/
+	border:0.1em solid var(--button-text-color);
+	margin: 0 0 3% 1%;
+	box-sizing: border-box;
+	text-decoration:none;
+	color:var(--button-text-color);
+	text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+	background-color:var(--main-object-color);
+	text-align: center;
+	transition: all 0.15s;
+	font-size: 12px;
+	font-size: clamp(12px, 2vw, 20px);
+	float: right;
+	vertical-align: middle;
+}
+
+a.button:hover{
+	text-shadow: 0 0 2em rgba(255,255,255,1);
+	color:var(--buton-text-hover-color);
+	border-color:var(--buton-text-hover-color);
+}
+
+label {
+	display: inline-block;
+	float: left;
+	margin-left: 1%;
+}
+
+/* table layout */
+table {
+	margin-top: 1%;
+	min-width: 80vw;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid white;
+}
+
+th {
+	text-align: left;
+}

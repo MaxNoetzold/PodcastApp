@@ -1,0 +1,207 @@
+.card-body {
+	transition: transform 0.6s;
+	transform-style: preserve-3d;
+	display: flex;
+	flex: 1;
+	padding: 5%;
+}
+
+.card-front, .card-back {
+	min-width: 100%;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	display: flex;
+	background-color: inherit;
+}
+
+.card-back {
+	color: white;
+	transform: rotateY(-180deg) translate(100%,0) translateZ(1px); /* without translateZ(1px) it will not be shown on safari, in fact card-back would be behind card-front*/
+}
+
+.card {
+	display: flex;
+	color: var(--main-text-color);
+	text-align: center;
+	position: relative;
+}
+
+.card-body.is-flipped {
+	transform: rotateY(-180deg) translateZ(1px);
+}
+
+.cardTable {
+	min-height: 15vh;
+    border-collapse: collapse;
+	margin: auto 0;
+	text-align:center;
+	width: 100%;
+	overflow: hidden;
+}
+
+.card.a.button {
+	margin: 3em;
+}
+
+.category {
+	font-size: 12px;
+    font-size: clamp(12px, 2vw, 20px);
+	font-weight: 700;
+	margin: 0 7%;
+	color: var(--second-text-color);
+}
+
+.title {
+	text-align: center;
+	font-weight: 500;
+	margin: 0;
+	padding-top: 0.5vh;
+	padding-left: 2.5vw;
+	padding-right: 2.5vw;
+	padding-bottom: 0.5vh;
+	font-size: 22px;
+	font-size: clamp(22px, 4vw, 32px);
+}
+
+.backTitle {
+	text-align: center;
+	font-weight: 500;
+	margin: 0;
+	font-size: 22px;
+	font-size: clamp(22px, 4vw, 32px);
+}
+
+.time {
+    line-height: 1em;
+	margin: 0;
+}
+
+.date {
+	font-weight: 500;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: var(--main-object-color);
+	color: var(--button-text-color);
+	padding: 1vw;
+}
+.span {
+	display: block;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+}
+.day {
+	font-size: 12px;
+	font-size: clamp(12px, 4vw, 16px);
+	text-shadow: 0.3vh 0.5vh 0.3vh rgba(black, 0.18);
+}
+.month {
+	text-transform: uppercase;
+}
+.month,
+.year {
+	line-height: 0.75em;
+	font-size: 8px;
+	font-size: clamp(8px, 2vw, 12px);
+}
+
+.progress {
+	width: 0%;
+	height: 100%;
+	background-color: var(--progress-color);
+
+	position: absolute;
+}
+
+.progressBar {
+	width: 92%;
+	background-color: var(--main-bg-color);
+	height: 2.5vh;
+	border:0.2vh solid var(--button-text-color);
+
+	display:block;
+	margin:0.8vh auto;
+	border-radius:0.24vh;
+	box-sizing: border-box;
+
+	position: relative;
+	overflow: hidden;
+}
+
+.timeInformation {
+	font-size: 10px;
+	font-size: clamp(10px, 2vw, 14px);
+	text-align: left;
+	line-height: 1;
+
+	/*to center it in the middle of the progressbar*/
+	position: absolute;
+	left: 0.5vw;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+@media (min-width: 700px) {
+	.cardTable {
+		min-height: 20vh;
+	}
+}
+
+@media (min-width: 1200px) {
+	.cardTable {
+		min-height: 25vh;
+	}
+}
+
+.commentsTurn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 4vw;
+	max-width: 40px;
+	min-width: 20px;
+	padding: 2%;
+}
+
+/* CARD COLORS */
+.cardBGDark {
+	background-color: var(--card-bg-color-dark);
+}
+
+.cardBG1 {
+	background-color: var(--card-bg-color-1);
+}
+
+.cardBG2 {
+	background-color: var(--card-bg-color-2);
+}
+
+.cardBG3 {
+	background-color: var(--card-bg-color-3);
+}
+
+.cardBG4 {
+	background-color: var(--card-bg-color-4);
+}
+
+/*
+.cardBGDark:hover {
+	background-color: var(--card-hover-bg-color-dark);
+}
+
+.cardBG1:hover {
+	background-color: var(--card-hover-bg-color-1);
+}
+
+.cardBG2:hover {
+	background-color: var(--card-hover-bg-color-2);
+}
+
+.cardBG3:hover {
+	background-color: var(--card-hover-bg-color-3);
+}
+
+.cardBG4:hover {
+	background-color: var(--card-hover-bg-color-4);
+}*/

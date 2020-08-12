@@ -1,0 +1,29 @@
+:root {
+	--main-bg-color: #100e17;
+	
+	--player-object-color: #db4437;
+	--player-object-color-shadow: #db4437;
+	
+	--main-object-color: #FFFFFF;
+	
+	--main-text-color: #FFFFFF;
+	--button-text-color: #000000;
+	--buton-text-hover-color: #b3b3b3;
+	--second-text-color: rgba(255,255,255,0.8);
+	--footer-text-color: #4a5764;
+	--dark-text-color: #222021;
+	
+	--card-bg-color-dark: #333642;
+	--card-hover-bg-color-dark: #4a4e5c;
+	--card-bg-color-1: #4285f4;
+	--card-hover-bg-color-1: #76a7fa;
+	--card-bg-color-2: #db4437;
+	--card-hover-bg-color-2: #e57368;
+	--card-bg-color-3: #f4b400;
+	--card-hover-bg-color-3: #fbcb43;
+	--card-bg-color-4: #0f9d58;
+	--card-hover-bg-color-4: #33b679;
+	
+	--progress-color: #4CAF50;
+	
+}
